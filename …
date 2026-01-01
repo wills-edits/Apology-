@@ -1,0 +1,257 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Forever Promise to You ❤️</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display (romantic) + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #2a0033, #0f001a, #000);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glow {
+      box-shadow: 0 0 50px rgba(255, 105, 180, 0.5);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+    }
+
+    .floating-heart {
+      position: fixed;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: floatUp 5s ease-in forwards;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .beat {
+      animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    /* Sparkle background */
+    #particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Sparkling particles background -->
+  <div id="particles"></div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex items-center justify-center px-6 relative z-20">
+    <div class="text-center max-w-3xl">
+      <i class="fa-solid fa-heart text-pink-400 text-8xl mb-8 animate-pulse beat"></i>
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        From My heart to you,<br>
+        <span class="text-pink-400 text-glow">My Peace</span> ❤️
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+        I know you prefer handwritten letters but Ibusa doesn't have mailboxes🌚<br>
+        know this: My love for you will only grow... theres no percent chance of it dwindling 
+      </p>
+
+      <p class="text-lg text-pink-200 mb-12 italic">
+        This is more than an apology — it's a medium of reassuring you to know tha you're alway loved.
+      </p>
+
+      <button
+        onclick="revealMessage()"
+        class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 transition-all duration-300 px-10 py-4 rounded-full text-xl font-semibold glow transform hover:scale-105"
+      >
+        Open My Heart ❤️
+      </button>
+    </div>
+  </section>
+
+  <!-- Love Message Section -->
+  <section id="message" class="hidden min-h-screen flex items-center justify-center px-6 py-20 relative z-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="fade-in">
+        <h2 class="text-4xl md:text-6xl font-bold mb-12 text-pink-300 text-glow">
+          To My Peace 💌
+        </h2>
+
+        <p class="text-lg md:text-xl text-gray-200 leading-loose mb-8">
+           loving you isn't something I do — it's who I am now.<br>
+          You didn't just enter my life; you became the best part of it.
+        </p>
+
+        <p class="text-lg md:text-xl text-gray-200 leading-loose mb-8">
+          In your smile, I find my peace.<br>
+          In your eyes, I see my forever.<br>
+          In your voice, I hear my home.
+          I dont just call you my peace cos its cute or its your name but because you really are my peace.<br>
+          And if my peace acts distant from me you know the rest
+        </p>
+
+        <p class="text-lg md:text-xl text-gray-200 leading-loose mb-10">
+          You make ordinary moments feel magical,<br>
+          and i love the way you make me feel<br>
+          No mater how mad i am or bad my mood is, I get to come back to <em>you</em>.
+        </p>
+
+        <p class="text-xl md:text-2xl text-pink-300 italic mb-12">
+          "I never knew what I was missing until I found it in you."
+        </p>
+
+        <button
+          onclick="revealForever()"
+          class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 transition-all duration-300 px-10 py-4 rounded-full text-xl font-semibold glow transform hover:scale-105"
+        >
+          One More Thing... ❤️
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forever Section -->
+  <section id="forever" class="hidden min-h-screen flex items-center justify-center px-6 py-20 relative z-20 bg-black/40 backdrop-blur-md">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <i class="fa-solid fa-infinity text-pink-400 text-7xl mb-8"></i>
+
+      <h2 class="text-4xl md:text-6xl font-bold mb-10 text-pink-300 text-glow">
+        My Promise to You
+      </h2>
+
+      <p class="text-xl md:text-2xl leading-relaxed text-gray-100 mb-8">
+        I don't just wish to be with you —<br>
+        I choose you. Today. Tomorrow. Every day after.
+      </p>
+
+      <p class="text-xl md:text-2xl leading-relaxed text-pink-200 italic mb-10">
+        "I will love you in every season,<br>
+        through every storm and every sunrise.<br>
+        I will choose you when it's easy,<br>
+        and especially when it's hard."
+      </p>
+
+      <p class="text-2xl md:text-3xl font-bold text-pink-400 text-glow mt-12">
+        You are my always.<br>
+        You are my forever.<br>
+        You are my everything.
+      </p>
+
+      <p class="mt-12 text-2xl text-pink-300">
+        I love you more than words can ever express.<br>
+        <span class="text-3xl beat">❤️</span>
+      </p>
+
+      <p class="mt-16 text-lg text-gray-400 italic">
+        — Forever yours,<br>
+        <span class="text-pink-300 text-xl">Your Princess</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 text-gray-500 text-sm relative z-20">
+    Made with all my heart,from your princess... just for my Peace • January 2026 ❤️
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Particles background
+    particlesJS('particles', {
+      particles: {
+        number: { value: 80 },
+        color: { value: '#ff69b4' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 1, direction: 'none', random: true }
+      },
+      interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } },
+      retina_detect: true
+    });
+
+    function revealMessage() {
+      document.getElementById('hero').classList.add('hidden');
+      document.getElementById('message').classList.remove('hidden');
+      createHearts(40);
+      setTimeout(() => document.querySelector('#message .fade-in').classList.add('visible'), 300);
+    }
+
+    function revealForever() {
+      document.getElementById('message').classList.add('hidden');
+      document.getElementById('forever').classList.remove('hidden');
+      createHearts(60);
+      setTimeout(() => document.querySelector('#forever .fade-in').classList.add('visible'), 300);
+    }
+
+    function createHearts(count) {
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          const heart = document.createElement("div");
+          heart.className = "floating-heart fa-solid fa-heart";
+          heart.style.left = Math.random() * window.innerWidth + "px";
+          heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+          document.body.appendChild(heart);
+
+          setTimeout(() => heart.remove(), 6000);
+        }, i * 100);
+      }
+    }
+  </script>
+</body>
+</html>""
